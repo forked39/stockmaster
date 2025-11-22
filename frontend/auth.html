@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>StockMaster — Login</title>
+
+<style>
+  :root {
+    --bg1: #0a0812;
+    --bg2: #141226;
+    --accent: #a15cff;
+    --accent2: #72d8ff;
+    --muted: rgba(255,255,255,0.75);
+    --card-w: 430px;
+    --card-h: 540px;
+  }
+
+  * {
+    box-sizing: border-box;
+    font-family: Inter, system-ui, sans-serif;
+  }
+
+  body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle at 20% 20%, #1a1630, #0a0812 70%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: #fff;
+  }
+
+  /* Soft glowing blobs */
+  .blob {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(140px);
+    opacity: 0.35;
+  }
+  .b1 { background: var(--accent); top: -120px; left: -160px; }
+  .b2 { background: var(--accent2); bottom: -150px; right: -120px; }
+
+  /* Card container */
+  .flip-container {
+    width: var(--card-w);
+    height: var(--card-h);
+    perspective: 1200px;
+    position: relative;
+  }
+
+  .flipper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+  }
+
+  .flipped {
+    transform: rotateY(180deg);
+  }
+
+  /* Faces */
+  .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(16px);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .back {
+    transform: rotateY(180deg);
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .brand img {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+  }
+
+  .title {
+    margin-top: 16px;
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+
+  .input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border: none;
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 6px;
+    cursor: pointer;
+    color: #080c12;
+  }
+
+  .link {
+    margin-top: 14px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    cursor: pointer;
+  }
+
+  .link span {
+    color: var(--accent);
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+
+<div class="flip-container">
+  <div class="flipper" id="flipper">
+
+    <!-- FRONT: LOGIN -->
+    <div class="face front">
+      <div class="brand">
+        <img src="Gemini Generated Image.png">
+        <h2>StockMaster</h2>
+      </div>
+
+      <div class="title">Welcome Back</div>
+      <div class="subtitle">Sign in to continue</div>
+
+      <input class="input" id="loginEmail" type="email" placeholder="Email" />
+      <input class="input" id="loginPass" type="password" placeholder="Password" />
+      <button class="btn" id="loginBtn" type="button">Sign In</button>
+
+      <div class="link" id="goSignup">Don’t have an account? <span>Sign up</span></div>
+    </div>
+
+    <!-- BACK: SIGNUP -->
+    <div class="face back">
+      <div class="brand">
+        <img src="Gemini Generated Image.png">
+        <h2>StockMaster</h2>
+      </div>
+
+      <div class="title">Create Account</div>
+      <div class="subtitle">Register to access dashboard</div>
+
+      <input class="input" id="signupEmail" type="email" placeholder="Email" />
+      <input class="input" id="signupPass" type="password" placeholder="Password" />
+      <input class="input" id="signupPass2" type="password" placeholder="Confirm Password" />
+      <button class="btn" id="signupBtn"type="button">Create Account</button>
+
+      <div class="link" id="goLogin">Already have an account? <span>Login</span></div>
+    </div>
+
+  </div>
+</div>
+<script>
+
+
+// flip actions
+document.getElementById("goSignup").onclick = () => {
+  flipper.classList.add("flipped");
+};
+
+document.getElementById("goLogin").onclick = () => {
+  flipper.classList.remove("flipped");
+};
+
+// redirects
+document.getElementById("loginBtn").onclick = () => {
+  window.location.href = "index.html";
+};
+
+document.getElementById("signupBtn").onclick = () => {
+  window.location.href = "index.html";
+};
+</script>
+
+</body>
+</html>

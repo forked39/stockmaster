@@ -1,4 +1,8 @@
 // locations.js
+if (!localStorage.getItem("token")) {
+  window.location.href = "auth.html";
+}
+
 async function loadLocations(){
   try{
     const rows = await apiFetch('/locations');

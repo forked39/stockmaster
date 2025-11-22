@@ -1,4 +1,8 @@
 // delivery-detail.js
+if (!localStorage.getItem("token")) {
+  window.location.href = "auth.html";
+}
+
 const did = new URLSearchParams(window.location.search).get('id');
 let ditems = [];
 

@@ -1,4 +1,8 @@
 // receipts.js
+if (!localStorage.getItem("token")) {
+  window.location.href = "auth.html";
+}
+
 async function loadReceipts(q='') {
   try {
     const rows = await apiFetch('/receipts' + (q ? `?q=${encodeURIComponent(q)}` : ''));

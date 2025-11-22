@@ -1,4 +1,6 @@
 // dashboard.js
+
+
 async function loadKPIs() {
   try {
     const [productCount, lowStock, pendingReceipts, pendingDeliveries] = await Promise.all([

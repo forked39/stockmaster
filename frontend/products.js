@@ -1,4 +1,8 @@
 // products.js
+if (!localStorage.getItem("token")) {
+  window.location.href = "auth.html";
+}
+
 async function loadProducts(q='') {
   try {
     const rows = await apiFetch('/products' + (q ? `?q=${encodeURIComponent(q)}` : ''));

@@ -1,4 +1,8 @@
 // ledger.js
+if (!localStorage.getItem("token")) {
+  window.location.href = "auth.html";
+}
+
 async function loadLedger(q='') {
   try {
     const rows = await apiFetch('/ledger' + (q ? `?q=${encodeURIComponent(q)}` : ''));

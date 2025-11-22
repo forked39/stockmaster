@@ -1,4 +1,8 @@
 // stock.js
+if (!localStorage.getItem("token")) {
+  window.location.href = "auth.html";
+}
+
 async function loadStock(q='') {
   try {
     const rows = await apiFetch('/stock' + (q ? `?q=${encodeURIComponent(q)}` : ''));

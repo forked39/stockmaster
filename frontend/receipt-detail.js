@@ -1,4 +1,8 @@
 // receipt-detail.js
+if (!localStorage.getItem("token")) {
+  window.location.href = "auth.html";
+}
+
 const rid = new URLSearchParams(window.location.search).get('id');
 let items = [];
 

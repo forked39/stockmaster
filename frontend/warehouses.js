@@ -1,4 +1,8 @@
 // warehouses.js
+if (!localStorage.getItem("token")) {
+  window.location.href = "auth.html";
+}
+
 async function loadWarehouses(){
   try{
     const rows = await apiFetch('/warehouses');

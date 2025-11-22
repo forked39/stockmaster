@@ -1,4 +1,8 @@
 // deliveries.js
+if (!localStorage.getItem("token")) {
+  window.location.href = "auth.html";
+}
+
 async function loadDeliveries(q='') {
   try {
     const rows = await apiFetch('/deliveries' + (q ? `?q=${encodeURIComponent(q)}` : ''));
