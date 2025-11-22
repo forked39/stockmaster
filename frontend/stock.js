@@ -1,7 +1,5 @@
 // stock.js
-if (!localStorage.getItem("token")) {
-  window.location.href = "auth.html";
-}
+
 
 async function loadStock(q='') {
   try {

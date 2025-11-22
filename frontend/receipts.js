@@ -1,7 +1,5 @@
 // receipts.js
-if (!localStorage.getItem("token")) {
-  window.location.href = "auth.html";
-}
+
 
 async function loadReceipts(q='') {
   try {

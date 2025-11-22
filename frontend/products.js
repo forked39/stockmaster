@@ -1,7 +1,5 @@
 // products.js
-if (!localStorage.getItem("token")) {
-  window.location.href = "auth.html";
-}
+
 
 async function loadProducts(q='') {
   try {
