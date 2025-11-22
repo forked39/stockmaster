@@ -1,7 +1,5 @@
 // ledger.js
-if (!localStorage.getItem("token")) {
-  window.location.href = "auth.html";
-}
+
 
 async function loadLedger(q='') {
   try {

@@ -1,7 +1,5 @@
 // deliveries.js
-if (!localStorage.getItem("token")) {
-  window.location.href = "auth.html";
-}
+
 
 async function loadDeliveries(q='') {
   try {
