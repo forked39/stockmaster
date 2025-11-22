@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Receipt — StockMaster</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <img src="/mnt/data/6987ae49-4c32-46b9-b887-a5a521470603.png" alt="logo" />
+    <div class="header-title">StockMaster</div>
+  </div>
+  <nav class="navbar">
+    <a href="index.html">Dashboard</a>
+    <a href="receipts.html">Receipts</a>
+    <a href="deliveries.html">Deliveries</a>
+    <a href="ledger.html">Move History</a>
+  </nav>
+  <div class="header-right"><span>Profile</span></div>
+</header>
+
+<main class="main">
+  <div class="top">
+    <div class="title">Receipt</div>
+    <div class="actions">
+      <button id="saveBtn" class="btn">Save</button>
+      <button id="validateBtn" class="btn secondary">Validate</button>
+    </div>
+  </div>
+
+  <section class="panel">
+    <div class="form-row">
+      <div class="input-field">
+        <label class="label">Vendor</label>
+        <input id="vendor" class="input-text" placeholder="Vendor name" />
+      </div>
+      <div class="input-field">
+        <label class="label">Reference</label>
+        <input id="ref" class="input-text" placeholder="Optional reference" />
+      </div>
+    </div>
+
+    <div style="margin-top:12px">
+      <div style="font-weight:700;margin-bottom:8px">Items</div>
+      <table class="table">
+        <thead><tr><th>Product</th><th>Qty</th><th></th></tr></thead>
+        <tbody id="items-body"><tr><td colspan="3" class="empty">No items</td></tr></tbody>
+      </table>
+      <div style="margin-top:10px"><button id="addItem" class="btn">Add Item</button></div>
+    </div>
+  </section>
+</main>
+
+<script src="app.js"></script>
+<script src="receipt-detail.js" defer></script>
+</body>
+</html>

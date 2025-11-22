@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Receipts — StockMaster</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <img src="/mnt/data/6987ae49-4c32-46b9-b887-a5a521470603.png" alt="logo" />
+    <div class="header-title">StockMaster</div>
+  </div>
+
+  <nav class="navbar">
+    <a href="index.html">Dashboard</a>
+    <a href="receipts.html">Receipts</a>
+    <a href="deliveries.html">Deliveries</a>
+    <a href="ledger.html">Move History</a>
+    <a href="stock.html">Stock</a>
+    <a href="warehouses.html">Warehouses</a>
+    <a href="locations.html">Locations</a>
+  </nav>
+
+  <div class="header-right">
+    <span>Profile</span>
+  </div>
+</header>
+
+<main class="main">
+  <div class="top">
+    <div class="title">Receipts</div>
+    <div class="actions">
+      <input class="input" id="receipt-search" placeholder="Search receipts..." />
+      <button id="newReceipt" class="btn">New Receipt</button>
+    </div>
+  </div>
+
+  <section class="panel">
+    <table class="table">
+      <thead>
+        <tr><th>Reference</th><th>Vendor</th><th>Date</th><th>Status</th><th>Actions</th></tr>
+      </thead>
+      <tbody id="receipts-body">
+        <tr><td colspan="5" class="empty">Loading...</td></tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+<script src="app.js"></script>
+<script src="receipts.js" defer></script>
+</body>
+</html>
