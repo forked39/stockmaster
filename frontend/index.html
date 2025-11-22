@@ -1,55 +1,94 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>StockMaster — Dashboard</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<div class="app">
-  <aside class="sidebar">
-    <div class="brand"><img src="/mnt/data/6987ae49-4c32-46b9-b887-a5a521470603.png" alt="logo"><span>StockMaster</span></div>
-    <nav class="nav">
-      <a href="index.html">Dashboard</a>
-      <a href="receipts.html">Receipts</a>
-      <a href="receipt-detail.html">Receipt Detail</a>
-      <a href="deliveries.html">Deliveries</a>
-      <a href="delivery-detail.html">Delivery Detail</a>
-      <a href="ledger.html">Move History</a>
-      <a href="warehouses.html">Warehouses</a>
-      <a href="locations.html">Locations</a>
-      <a href="stock.html">Stock</a>
-    </nav>
-    <div style="margin-top:18px" class="small">Logged in as <strong>you</strong></div>
-  </aside>
 
-  <main class="main">
-    <div class="top">
-      <div class="title">Dashboard</div>
-      <div class="actions">
-        <input class="input" id="search" placeholder="Search...">
-        <button id="newBtn" class="btn">New</button>
-      </div>
+<!-- ===================== HEADER / NAV ===================== -->
+<header class="header">
+  <div class="header-left">
+    <img src="/mnt/data/6987ae49-4c32-46b9-b887-a5a521470603.png" alt="logo" />
+    <div class="header-title">StockMaster</div>
+  </div>
+
+  <nav class="navbar">
+    <a href="index.html">Dashboard</a>
+    <a href="receipts.html">Receipts</a>
+    <a href="deliveries.html">Deliveries</a>
+    <a href="ledger.html">Move History</a>
+    <a href="stock.html">Stock</a>
+    <a href="warehouses.html">Warehouses</a>
+    <a href="locations.html">Locations</a>
+  </nav>
+
+  <div class="header-right">
+    <span>Profile</span>
+  </div>
+</header>
+
+<!-- ===================== MAIN CONTENT ===================== -->
+<main class="main">
+  <div class="top">
+    <div class="title">Dashboard</div>
+    <div class="actions">
+      <input class="input" id="search" placeholder="Search..." />
+      <button id="newBtn" class="btn">New</button>
+    </div>
+  </div>
+
+  <!-- KPI CARDS -->
+  <section class="kpi-row" id="kpis">
+    <div class="card">
+      <div class="kpi-title">Total Products</div>
+      <div class="kpi-value" id="total-products">—</div>
     </div>
 
-    <section class="kpi-row" id="kpis">
-      <div class="card"><div class="kpi-title">Total Products</div><div class="kpi-value" id="total-products">—</div></div>
-      <div class="card"><div class="kpi-title">Low Stock</div><div class="kpi-value" id="low-stock">—</div></div>
-      <div class="card"><div class="kpi-title">Pending Receipts</div><div class="kpi-value" id="pending-receipts">—</div></div>
-      <div class="card"><div class="kpi-title">Pending Deliveries</div><div class="kpi-value" id="pending-deliveries">—</div></div>
-    </section>
+    <div class="card">
+      <div class="kpi-title">Low Stock</div>
+      <div class="kpi-value" id="low-stock">—</div>
+    </div>
 
-    <section class="panel">
-      <div class="panel-header">Recent Activity</div>
-      <table class="table">
-        <thead><tr><th>Time</th><th>Type</th><th>Product</th><th>Qty</th><th>Ref</th></tr></thead>
-        <tbody id="activity-body"><tr><td colspan="5" class="empty">Loading...</td></tr></tbody>
-      </table>
-    </section>
-  </main>
-</div>
+    <div class="card">
+      <div class="kpi-title">Pending Receipts</div>
+      <div class="kpi-value" id="pending-receipts">—</div>
+    </div>
 
+    <div class="card">
+      <div class="kpi-title">Pending Deliveries</div>
+      <div class="kpi-value" id="pending-deliveries">—</div>
+    </div>
+  </section>
+
+  <!-- Recent Activity -->
+  <section class="panel">
+    <div class="panel-header" style="margin-bottom: 12px; font-weight: 600; color: var(--muted);">
+      Recent Activity
+    </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Type</th>
+          <th>Product</th>
+          <th>Qty</th>
+          <th>Ref</th>
+        </tr>
+      </thead>
+      <tbody id="activity-body">
+        <tr><td colspan="5" class="empty">Loading...</td></tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+<!-- Scripts -->
 <script src="app.js"></script>
 <script src="dashboard.js" defer></script>
+
 </body>
 </html>
