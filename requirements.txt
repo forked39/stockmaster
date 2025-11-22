@@ -2,3 +2,4 @@ fastapi
 pydantic
 dotenv
 mysql-connector-python
+uvicorn
